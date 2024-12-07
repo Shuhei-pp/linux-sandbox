@@ -1,0 +1,19 @@
+services:
+    ubuntu:
+        image: ubuntu:latest
+        container_name: ubuntu
+        tty: true
+
+    go:
+        build: .
+        container_name: go
+        tty: true
+        volumes:
+            - ./ubuntu:/root
+
+    cc:
+        build: ./c
+        container_name: cc
+        tty: true
+        volumes:
+            - ./c:/root
